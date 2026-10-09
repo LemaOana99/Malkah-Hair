@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8f0e8">
+  <meta name="description" content="Discover thoughtfully selected hair essentials from Malkah Hair. Find your texture, learn about us, and get the support you need.">
+  <title>Malkah Hair — Find your crown</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #123b2a;
+      --muted: #557360;
+      --paper: #e8f0e8;
+      --white: #f5f8f3;
+      --accent: #28704d;
+      --accent-dark: #164a35;
+      --line: #c9d9cc;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .quote { font-family: var(--serif); font-weight: 400; }
+    h2 { margin-bottom: 16px; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -.035em; }
+    .section-intro { max-width: 540px; color: var(--muted); }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 23px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .button:hover { border-color: var(--accent-dark); background: var(--accent-dark); }
+    .button-light { border-color: var(--white); background: transparent; color: var(--white); }
+    .button-light:hover { border-color: var(--white); background: var(--white); color: var(--ink); }
+
+    .announcement {
+      padding: 8px 16px;
+      background: var(--ink);
+      color: white;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(18, 59, 42, .1);
+      background: rgba(232, 240, 232, .96);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      order: 1;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 26px;
+      letter-spacing: -.055em;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { order: 2; display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); }
+    .nav-links a {
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .nav-cta { color: var(--accent); }
+    .menu-toggle {
+      order: 4;
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .nav > .cart-trigger { order: 3; }
+
+    .hero { padding: 28px 0 74px; }
+    .hero-grid {
+      display: grid;
+      min-height: 550px;
+      grid-template-columns: .88fr 1.12fr;
+      background: #d8e7d9;
+    }
+    .hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(36px, 7vw, 88px); }
+    .hero h1 { max-width: 480px; margin-bottom: 22px; font-size: clamp(48px, 6vw, 78px); line-height: .99; letter-spacing: -.055em; }
+    .hero-copy > p:not(.eyebrow) { max-width: 380px; margin-bottom: 28px; color: var(--muted); }
+    .hero-image {
+      min-height: 420px;
+      background: #a9c5ad url("WhatsApp%20Image%202026-10-06%20at%2016.15.52.jpeg") center 36% / cover no-repeat;
+    }
+    .hero-note { margin: 15px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+
+    .catalog { padding: 38px 0 100px; background: var(--white); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 32px; }
+    .section-heading h2 { margin-bottom: 10px; }
+    .text-link { color: var(--accent-dark); font-size: 12px; font-weight: 700; letter-spacing: .07em; text-decoration-thickness: 1px; text-underline-offset: 5px; text-transform: uppercase; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-card { min-width: 0; }
+    .product-image { position: relative; overflow: hidden; aspect-ratio: 4 / 4.7; background: #dce9dd; }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .product-card:hover .product-image img { transform: scale(1.035); }
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 10px;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .product-info { display: flex; justify-content: space-between; gap: 12px; padding-top: 14px; }
+    .product-info h3 { margin-bottom: 2px; font-family: var(--serif); font-size: 22px; font-weight: 400; }
+    .product-info p { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+    .product-actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 14px; }
+    .product-price { color: var(--ink); font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .add-to-cart, .cart-trigger {
+      min-height: 40px;
+      padding: 0 13px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+    }
+    .add-to-cart:hover, .cart-trigger:hover { background: var(--ink); color: var(--white); }
+    .cart-count {
+      display: inline-grid;
+      min-width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      padding: 0 5px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 10px;
+    }
+    .catalog-note { margin: 30px 0 0; color: var(--muted); font-size: 11px; }
+
+    .cart-dialog {
+      width: min(620px, calc(100% - 28px));
+      max-width: none;
+      max-height: min(90vh, 900px);
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+    }
+    .cart-dialog::backdrop { background: rgba(9, 30, 20, .58); }
+    .cart-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+    .cart-heading h2 { margin-bottom: 20px; font-size: 36px; }
+    .cart-close { width: 40px; height: 40px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font-size: 22px; }
+    .cart-empty { padding: 16px 0; color: var(--muted); }
+    .cart-items { border-top: 1px solid var(--line); }
+    .cart-item { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .cart-item h3 { margin-bottom: 3px; font-family: var(--serif); font-size: 19px; font-weight: 400; }
+    .cart-item p { margin: 0; color: var(--muted); font-size: 12px; }
+    .cart-item-controls { display: flex; align-items: center; gap: 8px; }
+    .cart-item-controls button { width: 30px; height: 30px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+    .cart-item-controls .remove-item { width: auto; padding: 0 8px; border: 0; color: var(--accent-dark); font-size: 11px; text-decoration: underline; }
+    .cart-quantity { width: 58px; height: 34px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); text-align: center; }
+    .cart-storage-status { min-height: 18px; color: var(--muted); font-size: 11px; }
+    .cart-total { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; font-size: 15px; }
+    .delivery-note, .cart-note { color: var(--muted); font-size: 11px; }
+    .checkout-form { display: grid; gap: 14px; margin-top: 18px; }
+    .checkout-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .checkout-field { display: flex; flex-direction: column; gap: 6px; }
+    .checkout-field-full { grid-column: 1 / -1; }
+    .checkout-field label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .checkout-field input { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid var(--line); outline: none; background: var(--paper); color: var(--ink); }
+    .checkout-field input:focus { border-color: var(--accent); }
+    .checkout-submit { justify-self: start; cursor: pointer; }
+    .checkout-submit:disabled { cursor: not-allowed; opacity: .5; }
+    .checkout-status { min-height: 20px; margin: 0; color: var(--accent-dark); font-size: 12px; }
+
+    .about { padding: 100px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(40px, 8vw, 100px); }
+    .about-image { aspect-ratio: 1 / 1.06; background: #a9c5ad url("WhatsApp%20Image%202026-10-06%20at%2021.25.16.jpeg") center 34% / cover no-repeat; }
+    .about-copy { max-width: 460px; }
+    .about-copy h2 { max-width: 440px; }
+    .about-copy p:not(.eyebrow) { color: var(--muted); }
+    .quote { margin: 30px 0 0; padding-left: 18px; border-left: 2px solid #72a185; color: var(--accent-dark); font-size: 20px; line-height: 1.45; }
+
+    .support { padding: 92px 0 100px; background: #dce9df; }
+    .support-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 70px; }
+    .support-copy p:not(.eyebrow) { max-width: 350px; color: var(--muted); }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { position: relative; padding: 20px 36px 20px 0; cursor: pointer; list-style: none; font-family: var(--serif); font-size: 19px; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { position: absolute; top: 18px; right: 4px; content: "+"; color: var(--accent); font-family: var(--sans); font-size: 22px; }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list details p { max-width: 590px; margin: -4px 0 20px; color: var(--muted); font-size: 13px; }
+
+    .contact { padding: 100px 0; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(42px, 8vw, 104px); }
+    .contact-copy p:not(.eyebrow) { max-width: 370px; color: var(--muted); }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
+    .field label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .field input, .field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 13px;
+    }
+    .field input:focus, .field textarea:focus { border-color: var(--accent); }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .form-note { grid-column: 1 / -1; margin: -5px 0 0; color: var(--muted); font-size: 11px; }
+    .contact-form .button { justify-self: start; cursor: pointer; }
+    .form-status { grid-column: 1 / -1; min-height: 20px; margin: 0; color: var(--accent-dark); font-size: 12px; }
+
+    footer { padding: 30px 0; background: var(--ink); color: white; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: white; font-family: var(--serif); font-size: 23px; text-decoration: none; }
+    .footer-brand span { color: #9cc5a8; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-nav a, .copyright { color: #d1e0d4; font-size: 10px; text-decoration: none; }
+    .copyright { margin: 0; text-align: right; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { min-height: 66px; }
+      .menu-toggle { display: block; }
+      .brand { margin-right: auto; }
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 24px 20px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .hero { padding-top: 16px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { padding: 44px 30px 38px; }
+      .hero h1 { font-size: clamp(48px, 13vw, 66px); }
+      .hero-image { min-height: 360px; }
+      .catalog, .about, .support, .contact { padding-top: 72px; padding-bottom: 72px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+      .product-grid { grid-template-columns: 1fr 1fr; gap: 24px 14px; }
+      .product-grid .product-card:last-child { grid-column: 1 / -1; width: calc(50% - 7px); }
+      .about-grid, .support-layout, .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+      .about-image { order: 2; aspect-ratio: 1 / .9; }
+      .support-layout { gap: 28px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .copyright { text-align: left; }
+    }
+    @media (max-width: 430px) {
+      .announcement { font-size: 9px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-grid .product-card:last-child { grid-column: auto; width: 100%; }
+      .contact-form { grid-template-columns: 1fr; }
+      .field-full, .form-note, .form-status { grid-column: auto; }
+      .checkout-fields { grid-template-columns: 1fr; }
+      .checkout-field-full { grid-column: auto; }
+      .footer-nav { gap: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">A little care goes a long way — welcome to Malkah Hair</div>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Malkah Hair home">Malkah<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#catalog">Hair catalog</a>
+        <a href="#about">About us</a>
+        <a href="#support">Support</a>
+        <a class="nav-cta" href="#contact">Contact us <span aria-hidden="true">↗</span></a>
+      </div>
+      <button class="cart-trigger" type="button" aria-label="Open shopping cart">Cart <span class="cart-count" aria-live="polite">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Hair that feels like you</p>
+          <h1 id="hero-title">Find your crown.</h1>
+          <p>Explore beautiful hair, thoughtfully chosen for the way you want to show up every day.</p>
+          <a class="button" href="#catalog">Explore the catalog <span aria-hidden="true">→</span></a>
+          <p class="hero-note">Your hair. Your way. Always.</p>
+        </div>
+        <div class="hero-image" role="img" aria-label="Portrait celebrating natural beauty"></div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The hair edit</p>
+            <h2 id="catalog-title">Find your texture.</h2>
+            <p class="section-intro">A few favorites to get you started. Explore styles that feel effortless, expressive, and all your own.</p>
+          </div>
+          <a class="text-link" href="#contact">Need a little help? Get in touch ↗</a>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="WhatsApp%20Image%202026-10-06%20at%2015.30.54.jpeg" alt="Model wearing a sleek, shoulder-length bob" loading="lazy">
+              <span class="product-tag">Everyday favorite</span>
+            </div>
+            <div class="product-info">
+              <div><h3>The Miss Curly</h3><p>Smooth, BassDown-length style</p></div>
+            </div>
+            <div class="product-actions">
+              <span class="product-price">R7,000</span>
+              <button class="add-to-cart" type="button" data-product="polished-bob">Add to cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <img src="WhatsApp%20Image%202026-10-06%20at%2015.30.54%20(1).jpeg" alt="Long, straight black hair shown from the back" loading="lazy">
+              <span class="product-tag">A little extra</span>
+            </div>
+            <div class="product-info">
+              <div><h3>The Sleek Straight</h3><p>Polished from every angle</p></div>
+            </div>
+            <div class="product-actions">
+              <span class="product-price">R8,000</span>
+              <button class="add-to-cart" type="button" data-product="sleek-straight">Add to cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <img src="WhatsApp%20Image%202026-10-06%20at%2015.30.55%20(1).jpeg" alt="Model wearing a sleek, shoulder-length style" loading="lazy">
+              <span class="product-tag">Made to turn heads</span>
+            </div>
+            <div class="product-info">
+              <div><h3>The Straight Bob</h3><p>Sleek, shoulder-length style</p></div>
+            </div>
+            <div class="product-actions">
+              <span class="product-price">R3,000</span>
+              <button class="add-to-cart" type="button" data-product="classic-bob">Add to cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <img src="WhatsApp%20Image%202026-10-06%20at%2015.30.55.jpeg" alt="Model wearing long, voluminous curls" loading="lazy">
+              <span class="product-tag">Beautiful volume</span>
+            </div>
+            <div class="product-info">
+              <div><h3>The Straight Skilly </h3><p>Long, Straight </p></div>
+            </div>
+            <div class="product-actions">
+              <span class="product-price">R8,000</span>
+              <button class="add-to-cart" type="button" data-product="full-curl">Add to cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <img src="WhatsApp%20Image%202026-10-06%20at%2015.30.56.jpeg" alt="Model wearing long, sleek straight hair" loading="lazy">
+              <span class="product-tag">Sleek and polished</span>
+            </div>
+            <div class="product-info">
+              <div><h3>The Classic Bob</h3><p>Short, Curved</p></div>
+            </div>
+            <div class="product-actions">
+              <span class="product-price">R2,500</span>
+              <button class="add-to-cart" type="button" data-product="long-straight">Add to cart</button>
+            </div>
+          </article>
+        </div>
+        <p class="catalog-note">Prices are in South African rand. Delivery fees are confirmed separately.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-grid wrap">
+        <div class="about-copy">
+          <p class="eyebrow">A little about us</p>
+          <h2 id="about-title">Beauty is yours to define.</h2>
+          <p>Malkah Hair is here to make finding your next look feel personal, joyful, and easy. We believe great hair is more than a style — it’s a little reminder to feel like yourself.</p>
+          <p>Whether you’re trying something new or coming back to a favorite, we’re happy you’re here. Make yourself at home and find the look that speaks to you.</p>
+          <blockquote class="quote">“Wear your hair the way you want to be seen.”</blockquote>
+        </div>
+        <div class="about-image" role="img" aria-label="Portrait of a woman with natural curls"></div>
+      </div>
+    </section>
+
+    <section class="support" id="support" aria-labelledby="support-title">
+      <div class="support-layout wrap">
+        <div class="support-copy">
+          <p class="eyebrow">Here when you need us</p>
+          <h2 id="support-title">Good hair days, with a little help.</h2>
+          <p>Have a question before you choose? Here are a few helpful starting points. For anything else, send us a note.</p>
+          <a class="text-link" href="#contact">Talk to our team ↗</a>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>How do I choose the right style?</summary>
+            <p>Start with the length, texture, and everyday look you love. If you’re deciding between styles, tell us a little about what you’re looking for in the contact form and we’ll be glad to help.</p>
+          </details>
+          <details>
+            <summary>How should I care for my hair?</summary>
+            <p>Care needs depend on the hair type and style. Check the care guidance included with your product, and reach out if you need help finding the right routine.</p>
+          </details>
+          <details>
+            <summary>Where can I find shipping or order information?</summary>
+            <p>Order, shipping, and return details vary by product. Please contact us with your question or order information so we can point you to the right details.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid wrap">
+        <div class="contact-copy">
+          <p class="eyebrow">We’d love to hear from you</p>
+          <h2 id="contact-title">Let’s talk hair.</h2>
+          <p>Questions about a style, need a hand, or simply want to say hello? Leave us a message and we’ll be happy to help.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field field-full">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <p class="form-note">Submitting sends your message to Malkah Hair and emails a confirmation to you.</p>
+          <button class="button" type="submit">Send a message <span aria-hidden="true">→</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <a class="footer-brand" href="#home">malkah<span>.</span></a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#catalog">Hair catalog</a>
+        <a href="#about">About us</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact us</a>
+      </nav>
+      <p class="copyright">© <span id="year"></span> Malkah Hair™ · Tswelopele Lemaoana</p>
+    </div>
+  </footer>
+
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+    <div class="cart-heading">
+      <div>
+        <p class="eyebrow">Your Malkah picks</p>
+        <h2 id="cart-title">Your cart</h2>
+      </div>
+      <button class="cart-close" id="cart-close" type="button" aria-label="Close cart">×</button>
+    </div>
+    <p class="cart-empty" id="cart-empty">Your cart is empty. Add a style from the catalog to get started.</p>
+    <p class="cart-storage-status" id="cart-storage-status" role="status" aria-live="polite"></p>
+    <p class="cart-storage-status" id="order-status" role="status" aria-live="polite"></p>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-total"><span>Hair subtotal</span><strong id="cart-subtotal">R0</strong></div>
+    <p class="delivery-note">Delivery fees are not included in this total. We’ll confirm the delivery fee separately.</p>
+    <form class="checkout-form" id="checkout-form">
+      <div class="checkout-fields">
+        <div class="checkout-field">
+          <label for="checkout-name">Full name</label>
+          <input id="checkout-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="checkout-field">
+          <label for="checkout-email">Email address</label>
+          <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="checkout-field">
+          <label for="checkout-phone">Phone number</label>
+          <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="checkout-field">
+          <label for="checkout-city">Town / city</label>
+          <input id="checkout-city" name="city" autocomplete="address-level2" required>
+        </div>
+        <div class="checkout-field checkout-field-full">
+          <label for="checkout-address">Delivery address</label>
+          <input id="checkout-address" name="address" autocomplete="street-address" required>
+        </div>
+        <div class="checkout-field">
+          <label for="checkout-postal">Postal code</label>
+          <input id="checkout-postal" name="postalCode" autocomplete="postal-code" required>
+        </div>
+      </div>
+      <button class="button checkout-submit" id="checkout-submit" type="submit">Submit order request <span aria-hidden="true">→</span></button>
+      <p class="checkout-status" id="checkout-status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="cart-note">Your order request is saved before checkout. Delivery fees are confirmed separately. The store must verify payment in its Paystack dashboard before fulfilling your order.</p>
+  </dialog>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script>
+    const STORE_ENDPOINT = "https://script.google.com/macros/s/AKfycbyMxE_IItJH_qWAD26b0XvFFerDuXIgdttQ8J4nMHoKR03nP5wAXofzZzldMKpjLk0M/exec";
+    const PAYSTACK_PUBLIC_KEY = "pk_test_999";
+    const products = {
+      "polished-bob": { name: "The Polished Bob", price: 7000 },
+      "sleek-straight": { name: "The Sleek Straight", price: 8000 },
+      "classic-bob": { name: "The Classic Bob", price: 3000 },
+      "full-curl": { name: "The Full Curl", price: 8000 },
+      "long-straight": { name: "The Long Straight", price: 2500 }
+    };
+    const databaseName = "malkah-hair";
+    const cart = new Map();
+    let cartStorageMessage = "";
+    const databaseReady = openDatabase();
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const cartDialog = document.querySelector("#cart-dialog");
+    const cartItems = document.querySelector("#cart-items");
+    const checkoutForm = document.querySelector("#checkout-form");
+    const checkoutStatus = document.querySelector("#checkout-status");
+    const checkoutButton = document.querySelector("#checkout-submit");
+    const orderStatus = document.querySelector("#order-status");
+    const formatPrice = (amount) => `R${amount.toLocaleString("en-ZA")}`;
+    const createRecordId = () => `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    let pendingOrder = null;
+    let pendingOrderRecorded = false;
+    let pendingContact = null;
+
+    function openDatabase() {
+      return new Promise((resolve, reject) => {
+        if (!window.indexedDB) {
+          reject(new Error("This browser does not support IndexedDB."));
+          return;
+        }
+        const request = window.indexedDB.open(databaseName, 1);
+        request.onupgradeneeded = () => {
+          const db = request.result;
+          if (!db.objectStoreNames.contains("carts")) db.createObjectStore("carts", { keyPath: "id" });
+          if (!db.objectStoreNames.contains("orders")) db.createObjectStore("orders", { keyPath: "id" });
+          if (!db.objectStoreNames.contains("messages")) db.createObjectStore("messages", { keyPath: "id" });
+        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error || new Error("Could not open the local database."));
+        request.onblocked = () => reject(new Error("Close other Malkah Hair tabs to finish opening the local database."));
+      });
+    }
+
+    async function databaseRequest(storeName, mode, operation) {
+      const db = await databaseReady;
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction(storeName, mode);
+        const request = operation(transaction.objectStore(storeName));
+        transaction.oncomplete = () => resolve(request.result);
+        transaction.onerror = () => reject(transaction.error || new Error("The local database request failed."));
+        transaction.onabort = () => reject(transaction.error || new Error("The local database transaction was cancelled."));
+      });
+    }
+
+    async function saveOrder(order) {
+      return databaseRequest("orders", "readwrite", (store) => store.put(order));
+    }
+
+    async function completeOrder(order) {
+      const db = await databaseReady;
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction(["orders", "carts"], "readwrite");
+        transaction.objectStore("orders").put(order);
+        transaction.objectStore("carts").put({
+          id: "current",
+          items: [],
+          updatedAt: new Date().toISOString()
+        });
+        transaction.oncomplete = () => resolve();
+        transaction.onerror = () => reject(transaction.error || new Error("The order could not be saved."));
+        transaction.onabort = () => reject(transaction.error || new Error("The order transaction was cancelled."));
+      }).then(() => {
+        cart.clear();
+      });
+    }
+
+    function isStoreEndpointConfigured() {
+      return /^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(STORE_ENDPOINT);
+    }
+
+    function postToStore(payload, options = {}) {
+      if (!isStoreEndpointConfigured()) {
+        return Promise.reject(new Error("The store email and database endpoint has not been configured."));
+      }
+
+      return new Promise((resolve, reject) => {
+        const frameName = `malkah-response-${payload.id}`;
+        const responseFrame = document.createElement("iframe");
+        responseFrame.name = frameName;
+        responseFrame.title = "Store submission response";
+        responseFrame.hidden = true;
+        document.body.append(responseFrame);
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = STORE_ENDPOINT;
+        form.target = frameName;
+        form.hidden = true;
+        const requestId = document.createElement("input");
+        requestId.type = "hidden";
+        requestId.name = "requestId";
+        requestId.value = payload.id;
+        const body = document.createElement("input");
+        body.type = "hidden";
+        body.name = "payload";
+        body.value = JSON.stringify(payload);
+        form.append(requestId, body);
+        document.body.append(form);
+
+        let timeout;
+        const cleanup = () => {
+          window.removeEventListener("message", onMessage);
+          window.clearTimeout(timeout);
+          form.remove();
+          responseFrame.remove();
+        };
+        const onMessage = (event) => {
+          const trustedOrigin = event.origin === "https://script.google.com" ||
+            /^https:\/\/[a-z0-9-]+-script\.googleusercontent\.com$/.test(event.origin);
+          if (!trustedOrigin || !event.data || event.data.requestId !== payload.id) return;
+          cleanup();
+          if (event.data.ok || (options.allowSaved && event.data.saved)) resolve(event.data);
+          else reject(new Error(event.data.error || "The store could not confirm the submission."));
+        };
+
+        window.addEventListener("message", onMessage);
+        timeout = window.setTimeout(() => {
+          cleanup();
+          reject(new Error("The store did not confirm the submission in time. Retry to resend it."));
+        }, 45000);
+        try {
+          form.submit();
+        } catch (error) {
+          cleanup();
+          reject(error);
+        }
+      });
+    }
+
+    function openPaymentCheckout(order) {
+      if (!isPaystackPublicKeyConfigured()) {
+        return Promise.reject(new Error("The Paystack public key is incomplete. Replace it with the full public key from your Paystack dashboard."));
+      }
+      if (!window.PaystackPop) {
+        return Promise.reject(new Error("Paystack checkout could not load. Check your connection and try again."));
+      }
+      if (!Number.isSafeInteger(order.total * 100)) {
+        return Promise.reject(new Error("The order total is too large for Paystack checkout."));
+      }
+
+      return new Promise((resolve, reject) => {
+        try {
+          const handler = window.PaystackPop.setup({
+            key: PAYSTACK_PUBLIC_KEY,
+            email: order.customer.email,
+            amount: order.total * 100,
+            currency: "ZAR",
+            ref: `Malkah-${order.id}`,
+            metadata: { orderId: order.id },
+            callback: (response) => {
+              if (response && response.reference) resolve(response);
+              else reject(new Error("Paystack did not confirm a successful checkout. Your order request remains unpaid."));
+            },
+            onClose: () => reject(new Error("Checkout was closed. Your order request is saved but unpaid; submit again to reopen checkout."))
+          });
+          handler.openIframe();
+        } catch (error) {
+          reject(new Error("Paystack could not start checkout. Check the public key and try again."));
+        }
+      });
+    }
+
+    function isPaystackPublicKeyConfigured() {
+      return /^pk_(test|live)_[A-Za-z0-9]{16,}$/.test(PAYSTACK_PUBLIC_KEY);
+    }
+
+    function clearPendingOrder() {
+      pendingOrder = null;
+    }
+
+    async function saveCart() {
+      try {
+        await databaseRequest("carts", "readwrite", (store) =>
+          store.put({ id: "current", items: [...cart], updatedAt: new Date().toISOString() }));
+        cartStorageMessage = "";
+      } catch (error) {
+        console.error("Could not save the Malkah Hair cart to the local database.", error);
+        cartStorageMessage = "Cart could not be saved to this browser’s local database.";
+      }
+      renderCart();
+    }
+
+    async function restoreCart() {
+      try {
+        let savedCart = await databaseRequest("carts", "readonly", (store) => store.get("current"));
+        if (!savedCart) {
+          const legacyCart = localStorage.getItem("malkah-hair-cart");
+          if (legacyCart) {
+            const entries = JSON.parse(legacyCart);
+            if (!Array.isArray(entries)) throw new TypeError("Saved cart data is not an array.");
+            savedCart = { id: "current", items: entries, updatedAt: new Date().toISOString() };
+          }
+        }
+        if (savedCart && Array.isArray(savedCart.items)) {
+          for (const entry of savedCart.items) {
+            if (!Array.isArray(entry) || entry.length !== 2) continue;
+            const [productId, quantity] = entry;
+            if (products[productId] && Number.isSafeInteger(quantity) && quantity > 0) {
+              cart.set(productId, quantity);
+            }
+          }
+          await databaseRequest("carts", "readwrite", (store) =>
+            store.put({ ...savedCart, id: "current", items: [...cart] }));
+          localStorage.removeItem("malkah-hair-cart");
+        }
+        renderCart();
+      } catch (error) {
+        console.error("Could not restore the Malkah Hair cart from the local database.", error);
+        cartStorageMessage = "Local database unavailable. Cart and form submissions cannot be saved in this browser.";
+        renderCart();
+        document.querySelectorAll(".add-to-cart, #checkout-submit, #contact-form button[type='submit']")
+          .forEach((button) => { button.disabled = true; });
+      }
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+      navLinks.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+        navLinks.classList.remove("is-open");
+      }
+    });
+
+    function renderCart() {
+      cartItems.replaceChildren();
+      let quantityTotal = 0;
+      let priceTotal = 0;
+
+      for (const [productId, quantity] of cart) {
+        const product = products[productId];
+        if (!product) continue;
+        quantityTotal += quantity;
+        priceTotal += product.price * quantity;
+
+        const item = document.createElement("article");
+        item.className = "cart-item";
+        const description = document.createElement("div");
+        const name = document.createElement("h3");
+        name.textContent = product.name;
+        const linePrice = document.createElement("p");
+        linePrice.textContent = `${formatPrice(product.price)} each · ${formatPrice(product.price * quantity)}`;
+        description.append(name, linePrice);
+
+        const controls = document.createElement("div");
+        controls.className = "cart-item-controls";
+        const decrease = document.createElement("button");
+        decrease.type = "button";
+        decrease.dataset.cartAction = "decrease";
+        decrease.dataset.product = productId;
+        decrease.setAttribute("aria-label", `Remove one ${product.name}`);
+        decrease.textContent = "−";
+        const editableQuantity = document.createElement("input");
+        editableQuantity.className = "cart-quantity";
+        editableQuantity.type = "number";
+        editableQuantity.min = "1";
+        editableQuantity.step = "1";
+        editableQuantity.value = String(quantity);
+        editableQuantity.dataset.cartQuantity = productId;
+        editableQuantity.setAttribute("aria-label", `Quantity of ${product.name}`);
+        const increase = document.createElement("button");
+        increase.type = "button";
+        increase.dataset.cartAction = "increase";
+        increase.dataset.product = productId;
+        increase.setAttribute("aria-label", `Add one ${product.name}`);
+        increase.textContent = "+";
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "remove-item";
+        remove.dataset.cartAction = "remove";
+        remove.dataset.product = productId;
+        remove.textContent = "Remove";
+        controls.append(decrease, editableQuantity, increase, remove);
+        item.append(description, controls);
+        cartItems.append(item);
+      }
+
+      document.querySelector("#cart-empty").hidden = cart.size > 0;
+      document.querySelector("#cart-storage-status").textContent = cartStorageMessage;
+      document.querySelector("#cart-subtotal").textContent = formatPrice(priceTotal);
+      document.querySelector(".cart-total").hidden = cart.size === 0;
+      document.querySelectorAll(".cart-count").forEach((count) => {
+        count.textContent = String(quantityTotal);
+      });
+      checkoutForm.hidden = cart.size === 0;
+      document.querySelector(".delivery-note").hidden = cart.size === 0;
+      document.querySelector(".cart-note").hidden = cart.size === 0;
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const productId = button.dataset.product;
+        if (!products[productId]) return;
+        cart.set(productId, (cart.get(productId) || 0) + 1);
+        orderStatus.textContent = "";
+        renderCart();
+        await saveCart();
+        checkoutStatus.textContent = `${products[productId].name} added to your cart.`;
+        button.textContent = "Added";
+        window.setTimeout(() => { button.textContent = "Add to cart"; }, 1200);
+      });
+    });
+
+    document.querySelector(".cart-trigger").addEventListener("click", () => {
+      checkoutStatus.textContent = "";
+      renderCart();
+      cartDialog.showModal();
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation");
+      navLinks.classList.remove("is-open");
+    });
+
+    document.querySelector("#cart-close").addEventListener("click", () => cartDialog.close());
+    cartDialog.addEventListener("click", (event) => {
+      if (event.target === cartDialog) cartDialog.close();
+    });
+    cartItems.addEventListener("click", async (event) => {
+      const button = event.target.closest("button[data-cart-action]");
+      if (!button) return;
+      const { cartAction, product: productId } = button.dataset;
+      const quantity = cart.get(productId);
+      if (!quantity) return;
+
+      if (cartAction === "increase") {
+        cart.set(productId, quantity + 1);
+      } else if (cartAction === "decrease") {
+        if (quantity > 1) cart.set(productId, quantity - 1);
+        else cart.delete(productId);
+      } else if (cartAction === "remove") {
+        cart.delete(productId);
+      }
+      orderStatus.textContent = "";
+      renderCart();
+      await saveCart();
+    });
+    cartItems.addEventListener("change", async (event) => {
+      const input = event.target.closest("input[data-cart-quantity]");
+      if (!input) return;
+      const quantity = Number(input.value);
+      if (!Number.isSafeInteger(quantity) || quantity < 1 || !products[input.dataset.cartQuantity]) {
+        checkoutStatus.textContent = "Enter a whole-number quantity of at least 1.";
+        renderCart();
+        return;
+      }
+      cart.set(input.dataset.cartQuantity, quantity);
+      checkoutStatus.textContent = "";
+      orderStatus.textContent = "";
+      renderCart();
+      await saveCart();
+    });
+
+    checkoutForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (cart.size === 0) {
+        checkoutStatus.textContent = "Add at least one style to your cart before checkout.";
+        return;
+      }
+      if (!isPaystackPublicKeyConfigured()) {
+        checkoutStatus.textContent = "Paystack cannot open because the public key is incomplete. Replace it with the full public key from your Paystack dashboard.";
+        return;
+      }
+      if (!window.PaystackPop) {
+        checkoutStatus.textContent = "Paystack checkout could not load. Check your connection, refresh the page, and try again.";
+        return;
+      }
+
+      if (pendingOrder && pendingOrderRecorded) {
+        checkoutButton.disabled = true;
+        checkoutStatus.textContent = "Opening secure Paystack checkout…";
+        try {
+          const payment = await openPaymentCheckout(pendingOrder);
+          const completedOrder = {
+            ...pendingOrder,
+            status: "payment_callback_unverified",
+            paymentReference: payment.reference,
+            paymentCallbackAt: new Date().toISOString()
+          };
+          await completeOrder(completedOrder);
+          orderStatus.textContent = `Paystack returned payment reference ${payment.reference} for order ${completedOrder.id}. The store must verify payment in its Paystack dashboard before fulfilling the order.`;
+          pendingOrder = null;
+          pendingOrderRecorded = false;
+          cartStorageMessage = "";
+          checkoutForm.reset();
+          checkoutButton.textContent = "Submit order request →";
+          renderCart();
+        } catch (error) {
+          console.error("Paystack checkout did not complete.", error);
+          checkoutStatus.textContent = error.message || "Could not open checkout. Your request remains saved; try again.";
+        } finally {
+          checkoutButton.disabled = false;
+        }
+        return;
+      }
+
+      checkoutButton.disabled = true;
+      checkoutStatus.textContent = "Saving your order request…";
+      try {
+        const customer = Object.fromEntries(new FormData(checkoutForm).entries());
+        const items = [...cart].map(([productId, quantity]) => ({
+          productId,
+          name: products[productId].name,
+          unitPrice: products[productId].price,
+          quantity
+        }));
+        const total = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+        if (!pendingOrder) {
+          pendingOrder = {
+            id: createRecordId(),
+            createdAt: new Date().toISOString(),
+            status: "pending_email_unpaid",
+            currency: "ZAR",
+            customer,
+            items,
+            total,
+            deliveryFee: null
+          };
+          await saveOrder(pendingOrder);
+        }
+
+        if (!isStoreEndpointConfigured()) {
+          const localOrder = {
+            ...pendingOrder,
+            status: "saved_locally_unpaid_email_not_configured"
+          };
+          await saveOrder(localOrder);
+          checkoutStatus.textContent = "Your request is saved only in this browser. Configure the store endpoint before taking payment.";
+          checkoutButton.disabled = false;
+          return;
+        } else {
+          await postToStore({ ...pendingOrder, type: "order" });
+          pendingOrderRecorded = true;
+          checkoutStatus.textContent = "Your order request is saved. Select Continue to secure checkout to open Paystack.";
+          checkoutButton.textContent = "Continue to secure checkout →";
+        }
+        checkoutButton.disabled = false;
+      } catch (error) {
+        console.error("Could not save the Malkah Hair order request.", error);
+        checkoutStatus.textContent = error.message || "Could not complete your order request. Please try again.";
+        checkoutButton.disabled = false;
+      }
+    });
+
+    document.querySelector("#contact-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const submitButton = form.querySelector("button[type='submit']");
+      const status = document.querySelector("#form-status");
+      submitButton.disabled = true;
+      status.textContent = "Saving your message…";
+      try {
+        if (!pendingContact) {
+          pendingContact = {
+            id: createRecordId(),
+            createdAt: new Date().toISOString(),
+            status: "pending_email",
+            customer: Object.fromEntries(new FormData(form).entries())
+          };
+          await databaseRequest("messages", "readwrite", (store) => store.put(pendingContact));
+        }
+        if (isStoreEndpointConfigured()) {
+          const result = await postToStore(
+            { id: pendingContact.id, type: "contact", customer: pendingContact.customer },
+            { allowSaved: true }
+          );
+          pendingContact.status = "emails_sent";
+          pendingContact.emailSentAt = new Date().toISOString();
+          if (!result.ok) pendingContact.status = "saved_email_delivery_failed";
+          try {
+            await databaseRequest("messages", "readwrite", (store) => store.put(pendingContact));
+          } catch (error) {
+            console.error("The message reached the store, but its local status could not be updated.", error);
+          }
+          const confirmationUrl = new URL("message-received.html", window.location.href);
+          confirmationUrl.searchParams.set("name", pendingContact.customer.name);
+          confirmationUrl.searchParams.set("reference", pendingContact.id);
+          confirmationUrl.searchParams.set("email", result.ok ? "sent" : "not-confirmed");
+          window.location.assign(confirmationUrl.href);
+        } else {
+          pendingContact.status = "saved_locally_email_not_configured";
+          await databaseRequest("messages", "readwrite", (store) => store.put(pendingContact));
+          status.textContent = "Message saved only in this browser. Set up the store endpoint to email the store and send you a confirmation.";
+        }
+        pendingContact = null;
+        form.reset();
+      } catch (error) {
+        console.error("Could not save the Malkah Hair contact message.", error);
+        status.textContent = error.message || "Could not save your message. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
+    document.querySelector("#contact-form").addEventListener("input", () => {
+      pendingContact = null;
+    });
+
+    renderCart();
+    restoreCart();
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

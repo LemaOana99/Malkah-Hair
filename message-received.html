@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174c38">
+  <title>Message received — Malkah Hair</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --green: #174c38;
+      --green-deep: #103a2b;
+      --paper: #f5f6ef;
+      --ink: #1f3027;
+      --muted: #637168;
+      --line: #dbe3d9;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+    header, footer { padding: 22px max(24px, calc((100% - 1080px) / 2)); }
+    header { border-bottom: 1px solid var(--line); }
+    .brand { color: var(--green-deep); font: 30px var(--serif); text-decoration: none; }
+    .brand span { color: #78a589; }
+    main { width: min(100% - 36px, 720px); margin: auto; padding: 72px 0; }
+    .confirmation {
+      padding: clamp(28px, 7vw, 64px);
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 24px 70px rgb(27 62 42 / 8%);
+    }
+    .mark {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border-radius: 50%;
+      background: #e4efe6;
+      color: var(--green);
+      font-size: 27px;
+    }
+    .eyebrow { margin: 25px 0 10px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font: 500 clamp(38px, 8vw, 60px)/1.05 var(--serif); }
+    .message { max-width: 520px; margin: 18px 0 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .reference { margin: 26px 0 0; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      background: var(--green);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .button:hover { background: var(--green-deep); }
+    .button-secondary { border: 1px solid var(--line); background: white; color: var(--green-deep); }
+    .button-secondary:hover { background: #f1f5f0; }
+    footer { color: var(--muted); font-size: 11px; }
+    @media (max-width: 520px) {
+      header, footer { padding-right: 18px; padding-left: 18px; }
+      main { padding: 38px 0; }
+      .actions { align-items: stretch; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html" aria-label="Malkah Hair home">Malkah<span>.</span></a>
+  </header>
+  <main>
+    <section class="confirmation" aria-labelledby="confirmation-title">
+      <span class="mark" aria-hidden="true">✓</span>
+      <p class="eyebrow">Message received</p>
+      <h1 id="confirmation-title">Thank you.</h1>
+      <p class="message" id="confirmation-message">Your message has reached Malkah Hair. We’ll be in touch soon.</p>
+      <p class="reference" id="confirmation-reference" hidden></p>
+      <div class="actions">
+        <a class="button" href="index.html#catalog">Explore the hair catalog</a>
+        <a class="button button-secondary" href="index.html#contact">Send another message</a>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Malkah Hair™ · Tswelopele Lemaoana</footer>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const reference = params.get("reference");
+    const emailStatus = params.get("email");
+
+    if (name) document.querySelector("#confirmation-title").textContent = `Thank you, ${name}.`;
+    if (emailStatus === "sent") {
+      document.querySelector("#confirmation-message").textContent =
+        "Your message has been received by Malkah Hair. A confirmation has also been sent to your email.";
+    } else if (emailStatus === "not-confirmed") {
+      document.querySelector("#confirmation-message").textContent =
+        "Your message has been received by Malkah Hair. We could not confirm the email notifications, but the store has your message.";
+    }
+    if (reference) {
+      const referenceElement = document.querySelector("#confirmation-reference");
+      referenceElement.textContent = `Message reference: ${reference}`;
+      referenceElement.hidden = false;
+    }
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
